@@ -9,10 +9,17 @@ $employees = mysqli_query($conn, $select);
 
 if (isset($_GET['delete'])) {
     $id = $_GET['delete'];
+    $select = "SELECT * FROM employees where id = $id";
+    $employees = mysqli_query($conn, $select);
+    $row = mysqli_fetch_assoc($employees);
+    $image = $row['image'];
+    unlink($image);
     $delete = "delete from employees where id = $id";
+
     mysqli_query($conn, $delete);
     header("location:/odc/employees/list.php");
 }
+auth();
 ?>
 
 <h1 class="text-center"> List Employees</h1>

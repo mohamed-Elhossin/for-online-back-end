@@ -6,6 +6,7 @@ include '../shared/nav.php';
 
 $select = "SELECT * FROM departments";
 $departments = mysqli_query($conn, $select);
+auth();
 ?>
 
 <h1 class="text-center"> List Department</h1>

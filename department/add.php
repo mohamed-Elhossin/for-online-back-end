@@ -11,7 +11,7 @@ if (isset($_POST['send'])) {
     $check =  mysqli_query($conn, $insert);
     testMessage($check, "Insert Employee");
 }
-
+auth();
 ?>
 
 <h1 class="text-center"> Add Department</h1>

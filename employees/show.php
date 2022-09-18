@@ -11,13 +11,14 @@ if (isset($_GET['show'])) {
     $row =  mysqli_fetch_assoc($employee);
 }
 
+auth();
 ?>
 
 <h6 class="text-center"> Show Employee : <?= $row['empName'] ?> </h6>
 
 <div class="container-fluid col-md-3 text-center">
     <div class="card">
-        <img src="/odc/employees/upload/<?= $row['image'] ?>" class="card-img-top" alt="">
+        <img src="/odc/employees/<?= $row['image'] ?>" class="card-img-top" alt="">
         <div class="card-body">
             <p> Name : <?= $row['empName'] ?></p>
             <p> salary : <?= $row['salary'] ?></p>

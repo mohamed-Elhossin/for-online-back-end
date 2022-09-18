@@ -3,6 +3,7 @@ include '../genral/env.php';
 include '../genral/functions.php';
 include '../shared/head.php';
 include '../shared/nav.php';
+
 if (isset($_POST['send'])) {
     $name = $_POST['name'];
     $salary = $_POST['salary'];
@@ -19,13 +20,16 @@ if (isset($_POST['send'])) {
     }
 
     $departmentId = $_POST['departmentId'];
-    $insert = "INSERT INTO employees VALUES(null , '$name',$salary,'$phone','$city' ,'$image_Name',$departmentId)";
+    $insert = "INSERT INTO employees VALUES(null , '$name',$salary,'$phone','$city' ,'$location',$departmentId)";
     $check = mysqli_query($conn, $insert);
     testMessage($check, "Insert Employee");
 }
 
 $select = "SELECT * FROM departments";
 $deps = mysqli_query($conn, $select);
+
+
+auth(1,2);
 
 
 ?>

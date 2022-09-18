@@ -42,6 +42,7 @@ if (isset($_GET['edit'])) {
 $select = "SELECT * FROM departments";
 $deps = mysqli_query($conn, $select);
 
+auth();
 
 ?>
 <!-- POST
