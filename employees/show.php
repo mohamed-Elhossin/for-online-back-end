@@ -11,7 +11,7 @@ if (isset($_GET['show'])) {
     $row =  mysqli_fetch_assoc($employee);
 }
 
-auth();
+auth(1);
 ?>
 
 <h6 class="text-center"> Show Employee : <?= $row['empName'] ?> </h6>

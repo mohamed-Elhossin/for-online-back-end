@@ -19,7 +19,7 @@ if (isset($_GET['delete'])) {
     mysqli_query($conn, $delete);
     header("location:/odc/employees/list.php");
 }
-auth();
+auth(1);
 ?>
 
 <h1 class="text-center"> List Employees</h1>

@@ -42,7 +42,7 @@ if (isset($_GET['edit'])) {
 $select = "SELECT * FROM departments";
 $deps = mysqli_query($conn, $select);
 
-auth();
+auth(1);
 
 ?>
 <!-- POST
@@ -60,14 +60,7 @@ auth();
                     <label>Employee salary</label>
                     <input class="form-control" value="<?= $row['salary'] ?>" name="salary" type="text">
                 </div>
-                <div class="form-group">
-                    <label>Employee phone</label>
-                    <input class="form-control" value="<?= $row['phone'] ?>" name="phone" type="text">
-                </div>
-                <div class="form-group">
-                    <label>Employee city</label>
-                    <input class="form-control" value="<?= $row['city'] ?>" name="city" type="text">
-                </div>
+
                 <div class="form-group">
                     <label>Profile Image : <img src="/odc/employees/upload/<?= $row['image'] ?>" width="20"></label>
                     <input class="form-control" name="image" type="file">
